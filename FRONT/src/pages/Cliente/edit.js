@@ -31,21 +31,55 @@ function Edit() {
     <div>
       <button><Link to="/cliente">Voltar</Link></button>
       <form onSubmit={gravar}>
-        Descrição:{" "}
-        <input
-          value={cliente.descricao}
-          onChange={(e) => {
-            setCliente({ ...cliente, descricao: e.target.value });
-          }}
-        />
-        Preço:{" "}
-        <input
-          value={cliente.preco}
-          onChange={(e) => {
-            setCliente({ ...cliente, preco: e.target.value });
-          }}
-        />
-        <button type="submit">Enviar</button>    
+        <div className="_forms-create">
+          <h2>Preencha os campos</h2>
+          <div className="inputs">
+            <span>Nome: </span>
+            <input
+              value={cliente.nome}
+              onChange={(e) => {
+                setCliente({ ...cliente, 'nome': e.target.value });
+              }}
+            />
+          </div>
+          <div className="inputs">
+            <span>Sobrenome: </span>
+            <input
+              value={cliente.sobrenome}
+              onChange={(e) => {
+                setCliente({ ...cliente, 'sobrenome': e.target.value });
+              }}
+            />
+          </div>
+          <div className="inputs">
+            <span>Telefone: </span>
+            <input
+              value={cliente.telefone}
+              onChange={(e) => {
+                setCliente({ ...cliente, 'telefone': e.target.value });
+              }}
+            />
+          </div>
+          <div className="inputs">
+            <span>Data de Nascimento: </span>
+            <input
+              value={cliente.dt_nasc}
+              onChange={(e) => {
+                setCliente({ ...cliente, 'dt_nasc': e.target.value });
+              }}
+            />
+          </div>
+          <div className="inputs">
+            <span>Salario: </span>
+            <input
+              value={cliente.salario}
+              onChange={(e) => {
+                setCliente({ ...cliente, 'salario': e.target.value });
+              }}
+            />
+          </div>
+          <button type="submit">Enviar</button>
+        </div>
       </form>
       <h3>{status}</h3>
     </div>

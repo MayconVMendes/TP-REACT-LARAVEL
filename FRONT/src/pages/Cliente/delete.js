@@ -10,7 +10,7 @@ function Delete() {
   useEffect(() => {
     async function consultar() {
       const response = await axios.get(
-        `http://localhost:8000/api/clientess/${id}`
+        `http://localhost:8000/api/clientes/${id}`
       );
       setCliente(response.data.data);
       setBotaoStatus(false);
@@ -20,7 +20,7 @@ function Delete() {
   async function confirmar(e) {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/api/clientess/${id}`
+        `http://localhost:8000/api/clientes/${id}`
       );
       setStatus("Cliente Excluído");
       setCliente({});

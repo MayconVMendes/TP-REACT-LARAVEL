@@ -23,13 +23,13 @@ function Create() {
       <button><Link to="/cliente">Voltar</Link></button>
       <form onSubmit={gravar}>
         <div className="_forms-create">
-        <h2>Preencha os campos</h2>
+          <h2>Preencha os campos</h2>
           <div className="inputs">
             <span>Nome: </span>
             <input
               value={cliente.nome}
               onChange={(e) => {
-                setCliente({ ...cliente, nome: e.target.value });
+                setCliente({ ...cliente, 'nome': e.target.value });
               }}
             />
           </div>
@@ -38,7 +38,7 @@ function Create() {
             <input
               value={cliente.sobrenome}
               onChange={(e) => {
-                setCliente({ ...cliente, sobrenome: e.target.value });
+                setCliente({ ...cliente, 'sobrenome': e.target.value });
               }}
             />
           </div>
@@ -47,16 +47,16 @@ function Create() {
             <input
               value={cliente.telefone}
               onChange={(e) => {
-                setCliente({ ...cliente, telefone: e.target.value });
+                setCliente({ ...cliente, 'telefone': e.target.value });
               }}
             />
           </div>
           <div className="inputs">
             <span>Data de Nascimento: </span>
             <input
-              value={cliente.dataNascimento}
+              value={cliente.dt_nasc}
               onChange={(e) => {
-                setCliente({ ...cliente, dataNascimento: e.target.value });
+                setCliente({ ...cliente, 'dt_nasc': e.target.value });
               }}
             />
           </div>
@@ -65,7 +65,7 @@ function Create() {
             <input
               value={cliente.salario}
               onChange={(e) => {
-                setCliente({ ...cliente, salario: e.target.value });
+                setCliente({ ...cliente, 'salario': e.target.value });
               }}
             />
           </div>
