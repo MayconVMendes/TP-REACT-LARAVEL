@@ -1,18 +1,4 @@
 .menu {
     display:flex;
-    justify-content: space-evenly;
-    height: 100px;
-    align-items: center;
-    background-color: rgb(57, 171, 236);
-}
-
-.menu a {
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
-}
-
-.menu a:hover {
-    cursor: pointer;
-    color: rgb(236, 173, 57);
+    justify-content: space-around;
 }

@@ -13,19 +13,24 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('produtos', function (Blueprint $table) {
             $table->id();
+            $table->string('nome',100);
+            $table->string('marca',100);
+            $table->decimal('preco',12,2);
+            $table->date('dataValidade');
+            $table->decimal('unidade',4);
             $table->timestamps();
-            $table->string('nome', 20);
-            $table->string('sobrenome', 30);
-            $table->date('dt_nasc');
-            $table->char('telefone', 13);
-            $table->decimal('salary', $precision = 8, $scale = 2);
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('produtos');
     }
 };

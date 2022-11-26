@@ -1,25 +1,23 @@
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Menu from './componentes/Menu';
-import Home from './pages/Home';
-import Cliente from './pages/Cliente';
-import {Create as Cliente_Create } from './pages/Cliente/create';
-import {Delete as Cliente_Delete } from './pages/Cliente/delete';
-import {Edit as Cliente_Edit } from './pages/Cliente/edit';
-import './App.css';
+import HomePage from './paginas/HomePage';
+import Produto from './paginas/Produto';
+import {Create as Produto_Create} from './paginas/Produto/create';
+import {Edit as Produto_Edit} from './paginas/Produto/edit';
+import {Delete as Produto_Delete} from './paginas/Produto/delete';
 
 function App() {
-  return (
+  return(
     <BrowserRouter>
       <Menu/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/cliente" element={ <Cliente />}/>
-        <Route path="/cliente/create" element={ <Cliente_Create />}/>
-        <Route path="/cliente/delete/:id" element={ <Cliente_Delete />}/>
-        <Route path="/cliente/edit/:id" element={ <Cliente_Edit />}/>
+        <Route path="/" element={ <HomePage />  } />
+        <Route path="/produto" element={ <Produto />  } />
+        <Route path="/produto/create" element={ <Produto_Create />  } />
+        <Route path="/produto/edit/:id" element={ <Produto_Edit />  } />
+        <Route path="/produto/delete/:id" element={ <Produto_Delete />  } />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
-
 export default App;
