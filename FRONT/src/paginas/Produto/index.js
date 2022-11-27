@@ -19,6 +19,13 @@ function Produto() {
 
     } , []  )
 
+    function converter(props) {
+        let dt_eua = props
+        let dt_br = dt_eua.split('-').reverse().join('/');
+
+        return dt_br;
+    }
+
     return(
         <div>
         <Link to='/produto/create'>Criar Novo</Link>
@@ -35,7 +42,7 @@ function Produto() {
                                 <td>{p.nome}</td>
                                 <td>{p.marca}</td>
                                 <td>{p.preco}</td>
-                                <td>{p.dataValidade}</td>
+                                <td>{converter(p.dataValidade)}</td>
                                 <td>{p.unidade}</td>
                                 <td><Link to={'/produto/edit/' + p.id}>Editar</Link></td>
                                 <td><Link to={'/produto/delete/' + p.id}>Excluir</Link></td>
