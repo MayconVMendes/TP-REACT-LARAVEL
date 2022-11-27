@@ -13,7 +13,7 @@ function Edit() {
             setProduto(response.data.data);
         }
         consultar();
-    });
+    }, [id]);
 
     async function gravar(e) {
         e.preventDefault();
