@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('marca',100);
             $table->decimal('preco',12,2);
             $table->date('dataValidade');
-            $table->decimal('unidade',4);
+            $table->integer('unidade');
             $table->timestamps();
         });
     }
