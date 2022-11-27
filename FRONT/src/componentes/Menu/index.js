@@ -6,7 +6,8 @@ function Menu() {
     return(
         <div className="menu">
             <Link to="/">Home</Link>
-            <Link to="/produto">Produto</Link>
+            <Link to="/produto">Visualizar Produtos</Link>
+            <Link to="/produto/create">Criar Novo Produto</Link>
         </div>
     )
 }

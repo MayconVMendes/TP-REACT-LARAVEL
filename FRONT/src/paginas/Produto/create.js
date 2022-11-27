@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
+import "./style.css";
 
 function Create()
 {
@@ -20,12 +21,31 @@ function Create()
     return(
         <div>
             <form onSubmit={ gravar }>
-                Nome: <input value={produto.nome} required onChange={ (e)=>{setProduto({...produto,'nome':e.target.value})} } />
-                Marca: <input value={produto.marca} required onChange={ (e)=>{setProduto({...produto,'marca':e.target.value})} } />
-                Preço: <input type={'number'} value={produto.preco} required onChange={ (e)=>{setProduto({...produto,'preco':e.target.value})} } />
-                Data validade: <input type={'date'} value={produto.dataValidade} required onChange={ (e)=>{setProduto({...produto,'dataValidade':e.target.value})} } />
-                Unidade: <input type={'number'} value={produto.unidade} required onChange={ (e)=>{setProduto({...produto,'unidade':e.target.value})} } />
-                <button type='submit'>Enviar</button>
+                <div className="_forms-create">
+                    <h2>Preencha os campos</h2>
+                    <div className="inputs">
+                        <span>Nome: </span>
+                        <input value={produto.nome} required onChange={ (e)=>{setProduto({...produto,'nome':e.target.value})} } />
+                    </div>
+                    <div className="inputs">
+                        <span>Marca: </span>
+                        <input value={produto.marca} required onChange={ (e)=>{setProduto({...produto,'marca':e.target.value})} } />
+                    </div>
+                    <div className="inputs">
+                        <span>Preço: </span>
+                        <input type={'number'} value={produto.preco} required onChange={ (e)=>{setProduto({...produto,'preco':e.target.value})} } />
+                    </div>
+                    <div className="inputs">
+                        <span>Data validade: </span>
+                        <input type={'date'} value={produto.dataValidade} required onChange={ (e)=>{setProduto({...produto,'dataValidade':e.target.value})} } />
+                    </div>
+                    <div className="inputs">
+                        <span>Unidade: </span>
+                        <input type={'number'} value={produto.unidade} required onChange={ (e)=>{setProduto({...produto,'unidade':e.target.value})} } />
+                    </div>
+                    
+                    <button type='submit'>Enviar</button>
+                </div>
             </form>
             <h3>{status}</h3>
             <Link to='/produto'>Voltar</Link>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useState,useEffect} from 'react';
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 function Delete()
 {
@@ -21,8 +21,13 @@ function Delete()
     async function confirmar(e){
         try{
             await axios.delete(`http://localhost:8000/api/produtos/${id}`);
-            setStatus("Produto Excluído");
+            setStatus("Produto Excluído, em 5 segundos você será redirecionado");
             setProduto({});
+
+            setTimeout(function() {
+                window.location.href = "/produto";
+            }, 5000);
+            
         } catch(erro) {
             setStatus(`Falha: ${erro}`);
         }
@@ -31,8 +36,7 @@ function Delete()
     return(
         <div>
             <h3>{produto.descricao}</h3>
-            { status!=='Produto Excluído' ? <button onClick={confirmar} disabled={botaoStatus}>Confirmar Exclusão</button> : '' }
-            <Link to='/produto'>Voltar</Link>
+            { status!=='Produto Excluído, em 5 segundos você será redirecionado' ? <button onClick={confirmar} disabled={botaoStatus}>Confirmar Exclusão</button> : '' }
             <h3>{status}</h3>
         </div>
     )

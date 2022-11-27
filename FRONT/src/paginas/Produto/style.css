@@ -1,0 +1,110 @@
+._forms-create {
+    display:grid;
+    justify-content: center;
+}
+
+._forms-create span {
+    font-weight: 700;
+}
+
+.inputs {
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+input {
+    max-width: 205px;
+    height: 27px;
+    margin: 5px 0;
+    width: 200px;
+    border-radius: 10px;
+    border: 2px solid rgb(19, 19, 19);
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(255,109,5,0.28); 
+    box-shadow: 0px 0px 8px 0px rgba(255,109,5,0.28);
+    padding: 1px 2px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(57, 171, 236);
+    background-color: rgb(57, 171, 236);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    margin: 5px 5px;
+    cursor: pointer;
+}
+
+.container {
+    overflow: auto;
+}
+
+table {
+    margin: 0 auto;
+}
+
+table, tr, td, th{
+    border:#000 solid 1px;
+    border-collapse: collapse;
+}
+
+th {
+    height: 40px;
+    text-transform: uppercase;
+    background-color: #c3c3c3;
+}
+
+td, th {
+    text-align: center;
+    padding: 0 10px;
+}
+
+.td_price {
+    display: flex;
+    justify-content: space-between;
+    border: unset;
+}
+
+.td_price span {
+    margin-right: 10px;
+}
+
+.td-btn {
+    border: none;
+    padding: 0 4px;
+}
+
+button:hover {
+    border-color: rgb(236, 173, 57);
+    background-color: rgb(236, 173, 57);
+    color: #000;
+}
+
+button.btn_edit {
+    border-color: rgb(236, 173, 57);
+    background-color: rgb(236, 173, 57);
+}
+
+button.btn_edit:hover {
+    border-color: rgb(255, 145, 0);
+    background-color: rgb(255, 145, 0);
+}
+
+button.btn_del {
+    border-color: rgb(241, 80, 68);
+    background-color: rgb(241, 80, 68);
+}
+
+button.btn_del:hover {
+    border-color: rgb(255, 17, 0);
+    background-color: rgb(255, 17, 0);
+}
