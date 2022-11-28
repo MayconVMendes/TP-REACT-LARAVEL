@@ -27,6 +27,7 @@ function Edit() {
 
     return (
         <div>
+            <h3>{status}</h3>
             <form onSubmit={gravar}>
                 <Link to='/produto'>Voltar</Link>
                 <div className="_forms-create">
@@ -56,7 +57,7 @@ function Edit() {
                 </div>
 
             </form>
-            <h3>{status}</h3>
+            
         </div>
     )
 }
