@@ -16,7 +16,7 @@ function Delete()
             setBotaoStatus(false);
         }
         consultar();
-    }, []);
+    }, [id]);
 
     async function confirmar(e){
         try{

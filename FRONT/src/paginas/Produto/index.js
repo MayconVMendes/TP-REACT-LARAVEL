@@ -28,7 +28,6 @@ function Produto() {
     return (
         <div className='container'>
             <table border={1}>
-                <caption>Produtos</caption>
                 <tr>
                     <th>Nome</th>
                     <th>Marca</th>
