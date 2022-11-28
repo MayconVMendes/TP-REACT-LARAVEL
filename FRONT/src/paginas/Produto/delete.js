@@ -22,12 +22,12 @@ function Delete() {
   async function confirmar(e) {
     try {
       await axios.delete(`http://localhost:8000/api/produtos/${id}`);
-      setStatus("Produto Excluído, em 5 segundos você será redirecionado");
+      setStatus("Produto Excluído, em alguns segundos você será redirecionado");
       setProduto({});
 
       setTimeout(function () {
         window.location.href = "/produto";
-      }, 5000);
+      }, 4000);
     } catch (erro) {
       setStatus(`Falha: ${erro}`);
     }
@@ -64,7 +64,7 @@ function Delete() {
           </tbody>
         </table>
         {status !==
-        "Produto Excluído, em 5 segundos você será redirecionado" ? (
+        "Produto Excluído, em alguns segundos você será redirecionado" ? (
           <button onClick={confirmar} disabled={botaoStatus}>
             Confirmar Exclusão
           </button>

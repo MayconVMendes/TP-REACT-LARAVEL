@@ -22,13 +22,13 @@ function Edit() {
     e.preventDefault();
     try {
       await axios.put(`http://localhost:8000/api/produtos/${id}`, produto);
-      setStatus("Produto Atualizado, em 5 segundos você será redirecionado");
+      setStatus("Produto Atualizado, em alguns segundos você será redirecionado");
       setBtn(true);
       setTimeout(function () {
         window.location.href = "/produto";
-      }, 5000);
+      }, 4000);
     } catch (erro) {
-      setStatus(`Falha: ${erro}`);
+      setStatus(`Falha: Por favor, certifique que os campos foram preenchidos corretamente`);
     }
   }
 
@@ -43,6 +43,7 @@ function Edit() {
             <input
               value={produto.nome}
               required
+              maxLength={20}
               onChange={(e) => {
                 setProduto({ ...produto, nome: e.target.value });
               }}
@@ -53,6 +54,7 @@ function Edit() {
             <input
               value={produto.marca}
               required
+              maxLength={20}
               onChange={(e) => {
                 setProduto({ ...produto, marca: e.target.value });
               }}

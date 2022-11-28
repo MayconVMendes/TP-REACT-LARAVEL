@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+
 import "./style.css";
 
 function Create() {
@@ -11,14 +12,14 @@ function Create() {
     e.preventDefault();
     try {
       await axios.post("http://localhost:8000/api/produtos", produto);
-      setStatus("Produto Cadastrado");
+      setStatus("Produto Cadastrado, em alguns segundos você será redirecionado");
       setBtn(true);
 
       setTimeout(function () {
         window.location.href = "/produto";
-      }, 5000);
+      }, 4000);
     } catch (erro) {
-      setStatus(`Falha: ${erro}`);
+      setStatus(`Falha: Por favor, certifique que os campos foram preenchidos corretamente`);
     }
   }
 
@@ -33,6 +34,7 @@ function Create() {
             <input
               value={produto.nome}
               required
+              maxLength={20}
               onChange={(e) => {
                 setProduto({ ...produto, nome: e.target.value });
               }}
@@ -43,6 +45,7 @@ function Create() {
             <input
               value={produto.marca}
               required
+              maxLength={20}
               onChange={(e) => {
                 setProduto({ ...produto, marca: e.target.value });
               }}
@@ -65,6 +68,7 @@ function Create() {
               type={"date"}
               value={produto.dataValidade}
               required
+              maxLength={5}
               onChange={(e) => {
                 setProduto({ ...produto, dataValidade: e.target.value });
               }}
