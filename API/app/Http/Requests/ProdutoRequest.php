@@ -26,7 +26,7 @@ class ProdutoRequest extends FormRequest
         return [
             'nome' => 'required|max:100',
             'marca' => 'required|max:100',
-            'preco' => 'required|numeric|between:0,100',
+            'preco' => 'required|numeric',
             'dataValidade' => 'required|date',
             'unidade' => 'required|numeric'
         ];
