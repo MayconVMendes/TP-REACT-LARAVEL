@@ -1,18 +1,24 @@
 import axios from 'axios';
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
 import "./style.css";
 
 function Create()
 {
     const [produto,setProduto] = useState({});
     const [status,setStatus] = useState('');
+    const [btn, setBtn] = useState(false);
 
     async function gravar(e){
         e.preventDefault();
         try{
             await axios.post('http://localhost:8000/api/produtos',produto);
             setStatus("Produto Cadastrado");
+            setBtn(true)
+
+            setTimeout(function() {
+                window.location.href = "/produto";
+            }, 5000);
+
         } catch(erro) {
             setStatus(`Falha: ${erro}`);
         }
@@ -20,6 +26,7 @@ function Create()
 
     return(
         <div>
+            <h3>{status}</h3>
             <form onSubmit={ gravar }>
                 <div className="_forms-create">
                     <h2>Preencha os campos</h2>
@@ -44,11 +51,9 @@ function Create()
                         <input type={'number'} value={produto.unidade} required onChange={ (e)=>{setProduto({...produto,'unidade':e.target.value})} } />
                     </div>
                     
-                    <button type='submit'>Enviar</button>
+                    {btn !== true ? <button type='submit'>Enviar</button> : ''}
                 </div>
             </form>
-            <h3>{status}</h3>
-            <Link to='/produto'>Voltar</Link>
         </div>
     )
 }

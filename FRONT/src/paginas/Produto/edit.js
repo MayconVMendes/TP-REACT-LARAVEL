@@ -6,6 +6,7 @@ function Edit() {
     const { id } = useParams();
     const [produto, setProduto] = useState({});
     const [status, setStatus] = useState('');
+    const [btn, setBtn] = useState(false);
 
     useEffect(() => {
         async function consultar() {
@@ -19,7 +20,11 @@ function Edit() {
         e.preventDefault();
         try {
             await axios.put(`http://localhost:8000/api/produtos/${id}`, produto);
-            setStatus("Produto Atualizado");
+            setStatus("Produto Atualizado, em 5 segundos você será redirecionado");
+            setBtn(true)
+            setTimeout(function() {
+                window.location.href = "/produto";
+            }, 5000);
         } catch (erro) {
             setStatus(`Falha: ${erro}`);
         }
@@ -52,12 +57,9 @@ function Edit() {
                         <span>Unidade: </span>
                         <input type={'number'} value={produto.unidade} required onChange={(e) => { setProduto({ ...produto, 'unidade': e.target.value }) }} />
                     </div>
-
-                    <button type='submit'>Enviar</button>
+                    {btn !== true ? <button type='submit'>Enviar</button> : ''}
                 </div>
-
             </form>
-            
         </div>
     )
 }
