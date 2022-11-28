@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Edit() {
   const { id } = useParams();
@@ -36,7 +36,6 @@ function Edit() {
     <div>
       <h3>{status}</h3>
       <form onSubmit={gravar}>
-        <Link to="/produto">Voltar</Link>
         <div className="_forms-create">
           <h2>Preencha os campos</h2>
           <div className="inputs">
